@@ -1,56 +1,55 @@
 <?php
-// Avvia la sessione
+
 session_start();
 
-// Inizializza la variabile $feedback
 $feedback = "";
 
-// Inizializza il punteggio se non esiste già
+
 if (!isset($_SESSION['score'])) {
     $_SESSION['score'] = 0;
 }
 
-// Percorso al file JSON
+
 $json_file_path = 'data.json';
 
-// Controlla se il file JSON esiste e può essere letto
+
 if (file_exists($json_file_path) && is_readable($json_file_path)) {
-    // Leggi il contenuto del file JSON
+
     $notizie_json = file_get_contents($json_file_path);
 
-    // Decodifica il JSON in un array associativo
+
     $notizie = json_decode($notizie_json, true);
 
-    // Seleziona una notizia casuale solo se non è già stata selezionata
+
     if (!isset($_SESSION['notizia_casuale'])) {
-        // Seleziona una notizia casuale
+
         $_SESSION['notizia_casuale'] = $notizie[array_rand($notizie)];
         unset($_POST['user_answer']);
     }
 
     $notizia_casuale = $_SESSION['notizia_casuale'];
 
-    // Verifica la risposta dell'utente se è stata inviata
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_answer = isset($_POST['user_answer']) ? $_POST['user_answer'] : null;
         if ($user_answer !== null) {
             $is_real = $notizia_casuale['real'] ? 'true' : 'false';
             if ($user_answer === $is_real) {
-                // Incrementa il punteggio se la risposta è corretta
+
                 $_SESSION['score']++;
                 $feedback = "Corretto! La notizia è " . ($notizia_casuale['real'] ? "vera. " . "<a href='" . $notizia_casuale['link'] . "'>Se non ci credi controlla...</a>" : "falsa.");
             } else {
-                // Se la risposta è sbagliata, reindirizza alla pagina del punteggio
+
                 header("Location: punteggio.php");
                 exit();
             }
 
-            // Resetta la notizia selezionata per il prossimo round
+
             unset($_SESSION['notizia_casuale']);
         }
     }
 } else {
-    // Gestisci l'errore di lettura del file JSON
+
     $notizia_casuale = null;
     $feedback = "Errore: il file delle notizie non è disponibile.";
 }
@@ -154,7 +153,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
                 <button type="submit" name="user_answer" value="true">Vera</button>
                 <button type="submit" name="user_answer" value="false">Falsa</button>
             </form>
-            <!-- Mostra il feedback solo se è stato impostato -->
+
             <?php if ($feedback) : ?>
                 <p><?php echo $feedback; ?></p>
             <?php endif; ?>

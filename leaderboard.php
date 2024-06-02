@@ -104,32 +104,32 @@
             <?php
             session_start();
 
-            // Azzera il punteggio
+
             $_SESSION['score'] = 0;
             ?>
             <?php
-            // Leggi i punteggi e i nickname dal file
+
             $leaderboard_data = file('leaderboard.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-            // Ordina i punteggi in ordine decrescente
+
             rsort($leaderboard_data);
 
-            // Contatore per la posizione nella classifica
+
             $position = 1;
 
-            // Ciclo attraverso i dati della classifica e li visualizzo in una tabella
+
             foreach ($leaderboard_data as $line) {
-                // Divido la riga in nickname e punteggio
+
                 list($nickname, $score) = explode('|', $line);
 
-                // Visualizzo i dati nella tabella
+
                 echo "<tr>";
                 echo "<td>$position</td>";
                 echo "<td>$nickname</td>";
                 echo "<td>$score</td>";
                 echo "</tr>";
 
-                // Incremento la posizione
+
                 $position++;
             }
             ?>

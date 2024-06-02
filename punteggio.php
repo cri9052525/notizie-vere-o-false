@@ -1,26 +1,26 @@
 <?php
-// Avvia la sessione
+
 session_start();
 
 
-// Continua il resto del codice come prima...
 
 
-// Ottieni il punteggio dalla sessione
+
+
 $score = $_SESSION['score'];
 
-// Verifica se il form è stato inviato
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica se è stato inviato un nickname valido
+
     if (!empty($_POST['nickname'])) {
-        // Sanitizza il nickname per evitare problemi di sicurezza
+
         $nickname = htmlspecialchars($_POST['nickname']);
 
-        // Salvataggio del punteggio e del nickname in un file
+
         $data = "$nickname|$score" . PHP_EOL;
         file_put_contents('leaderboard.txt', $data, FILE_APPEND);
 
-        // Reindirizza alla pagina della classifica
+
         header("Location: leaderboard.php");
         exit();
     }
