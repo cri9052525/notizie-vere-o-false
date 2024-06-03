@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nickname = htmlspecialchars($_POST['nickname']);
 
 
-        $data = "$nickname|$score" . PHP_EOL;
+        $data = "$score|$nickname" . PHP_EOL;
         file_put_contents('leaderboard.txt', $data, FILE_APPEND);
 
 
@@ -97,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         button {
+            cursor: pointer;
             border: 0.2 solid black;
             margin: 1vh;
             background-color: white;

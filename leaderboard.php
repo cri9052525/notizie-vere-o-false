@@ -38,9 +38,9 @@
             overflow-x: hidden;
         }
 
-        #contain{
+        #contain {
             position: absolute;
-            top:0;
+            top: 0;
             left: 0;
             display: flex;
             flex-direction: column;
@@ -65,24 +65,27 @@
             font-size: 7vw;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
-        table{
-            margin-top:-3vh;
+
+        table {
+            margin-top: -3vh;
             width: 80vw;
             background-color: white;
         }
-        th{
+
+        th {
             color: rgb(248, 98, 98);
             font-size: 6vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             border: .5vh solid black;
             background-color: black;
-            margin:0;
+            margin: 0;
             padding: 0;
         }
-        td{
+
+        td {
             font-size: 4vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            margin:0;
+            margin: 0;
             text-align: center;
             padding: 0;
         }
@@ -102,6 +105,7 @@
                 <th>Punteggio</th>
             </tr>
             <?php
+            error_reporting(0);
             session_start();
 
 
@@ -111,28 +115,37 @@
 
             $leaderboard_data = file('leaderboard.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
+            $listaDiGiocatori = [];
 
-            rsort($leaderboard_data);
+            // Build associative array with scores as keys and names as values
+            foreach ($leaderboard_data as $line) {
+                list($score, $name) = explode('|', $line);
+                $score = (int) $score; // Ensure the score is treated as an integer
+                if (!isset($listaDiGiocatori[$score])) {
+                    $listaDiGiocatori[$score] = [];
+                }
+                $listaDiGiocatori[$score][] = $name;
+            }
 
+            // Sort array by scores in descending order
+            krsort($listaDiGiocatori, SORT_NUMERIC);
 
             $position = 1;
 
-
-            foreach ($leaderboard_data as $line) {
-
-                list($nickname, $score) = explode('|', $line);
-
-
-                echo "<tr>";
-                echo "<td>$position</td>";
-                echo "<td>$nickname</td>";
-                echo "<td>$score</td>";
-                echo "</tr>";
-
-
-                $position++;
+            // Output leaderboard
+            foreach ($listaDiGiocatori as $score => $names) {
+                foreach ($names as $name) {
+                    echo "<tr>";
+                    echo "<td>$position</td>";
+                    echo "<td>$name</td>";
+                    echo "<td>$score</td>";
+                    echo "</tr>";
+                    $position++;
+                }
             }
             ?>
+
+
         </table>
     </div>
 </body>

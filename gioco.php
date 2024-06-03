@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 session_start();
 
 $feedback = "";
@@ -39,7 +39,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
                 $_SESSION['score']++;
                 $feedback = "Corretto! La notizia è " . ($notizia_casuale['real'] ? "vera. " . "<a href='" . $notizia_casuale['link'] . "'>Se non ci credi controlla...</a>" : "falsa.");
             } else {
-
+                unset($_SESSION['notizia_casuale']);
                 header("Location: punteggio.php");
                 exit();
             }
@@ -107,6 +107,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             width: 100vw;
             overflow-y: scroll;
         }
+
         #logo {
             margin-top: -15vh;
             margin-bottom: -30vh;
@@ -115,19 +116,23 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             filter: invert(100%)hue-rotate(180deg);
             z-index: 99;
         }
-        #logoLink{
+
+        #logoLink {
             z-index: 99;
         }
-        p{
-            margin-top: 10vh;
-            background-color: white ;
+
+        p {
+            margin-top: 0vh;
+            background-color: white;
             font-size: 4vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
+
         form {
             z-index: 1000;
         }
-        button{
+
+        button {
             border: 0.2 solid black;
             margin: 1vh;
             background-color: white;
@@ -136,8 +141,8 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             font-size: 6vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             z-index: 1000;
-        }   
-
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -147,7 +152,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
     <div id="contain">
         <a href="index.php" id="logoLink"><img id="logo" src="src/logo.svg" alt=""></a>
         <?php if ($notizia_casuale) : ?>
-            <p><?php echo htmlspecialchars($notizia_casuale['titolo']); ?></p>
+            <p style="margin-top: 10vh;"><?php echo htmlspecialchars($notizia_casuale['titolo']); ?></p>
 
             <form method="POST">
                 <button type="submit" name="user_answer" value="true">Vera</button>
