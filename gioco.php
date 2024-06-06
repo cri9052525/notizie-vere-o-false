@@ -39,6 +39,8 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
                 $_SESSION['score']++;
                 $feedback = "Corretto! La notizia è " . ($notizia_casuale['real'] ? "vera. " . "<a href='" . $notizia_casuale['link'] . "'>Se non ci credi controlla...</a>" : "falsa.");
             } else {
+                $feed2 = "Sbagliato! La notizia è " . ($notizia_casuale['real'] ? "vera. " . "<a href='" . $notizia_casuale['link'] . "'>Se non ci credi controlla...</a>" : "falsa.");
+                $_SESSION["ragemsg"] = $feed2;
                 unset($_SESSION['notizia_casuale']);
                 header("Location: punteggio.php");
                 exit();
@@ -66,7 +68,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
         #sfondo {
             background-repeat: no-repeat;
             background-size: cover;
-            background-image: url('src/indexWP.jpg');
+            background-image: linear-gradient(<?php echo rand(0,360);?>deg, rgba(<?php echo rand(0,255);?>,<?php echo rand(0,255);?>,<?php echo rand(0,255);?>,1) 0%, rgba(<?php echo rand(0,255);?>,<?php echo rand(0,255);?>,<?php echo rand(0,255);?>,1) 100%);
             backdrop-filter: blur(5vh);
             height: 100vh;
             width: 100vw;
@@ -99,6 +101,7 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             position: absolute;
             top: 0;
             left: 0;
+            right: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -143,6 +146,21 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             z-index: 1000;
             cursor: pointer;
         }
+        @media (orientation:portrait) {
+            #next{
+                width: 30vh;
+            }
+            #contain{
+                padding: 2vw;
+                width: 96vw;
+            }
+            #logo{
+                height: 100vh;
+                width: 50vh;
+                margin-top: -30vh;
+                margin-bottom: -52vh;
+            }
+        }
     </style>
 </head>
 
@@ -166,11 +184,11 @@ if (file_exists($json_file_path) && is_readable($json_file_path)) {
             <p><?php echo $feedback; ?></p>
         <?php endif; ?>
 
-        <p style="color:rgb(248, 98, 98);">Punteggio: <?php echo $_SESSION['score']; ?></p>
+        <p style="color:rgb(248, 98, 98); margin-top:0;">Punteggio: <?php echo $_SESSION['score']; ?></p>
 
         <?php if ($feedback && $notizia_casuale) : ?>
             <form method="POST" action="gioco.php">
-                <button type="submit" name="next_question">Prossima Domanda</button>
+                <button id="next" type="submit" name="next_question">Prossima Domanda</button>
             </form>
         <?php endif; ?>
     </div>

@@ -6,7 +6,7 @@ $_SESSION['score'] = 0;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -145,6 +145,25 @@ $_SESSION['score'] = 0;
             color: rgb(255, 255, 255);
             -webkit-box-shadow: 0px 0px 50px 7px #FFFFFF;
             box-shadow: 0px 0px 50px 7px #FFFFFF;
+        }
+
+        @media (orientation:portrait) {
+            .a {
+                top: 1vh;
+                width: 5vh;
+                height: 5vh;
+            }
+
+            .b {
+                width: 70vw;
+                height: 15vh;
+            }
+
+            .b:hover {
+                width: 80vw;
+                height: 20vh;
+                font-size: 30vw;
+            }
         }
     </style>
 </head>

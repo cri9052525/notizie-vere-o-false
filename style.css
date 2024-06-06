@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    margin: 0;
+    
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F9;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .NavBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #586F7C;
+    }
+    .NavBar-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 5px;
+        padding-left: 0 !important;
+    } 
+    .NavBar-left {
+        display: flex;
+        align-items: center;
+        padding-right: 0 !important;
+    }
+    .Hero {
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: left;
+        padding: 0px;
+    }
+    .Hero .Text {
+        margin-bottom: 0;
+        max-width: 50%;
+    }
+    .Hero .Titolo {
+        font-size: 2em;
+        
+        text-align: center !important;
+    }
+    .Hero p {
+        font-size: 1.2em;
+    }
+    .Hero img {
+        max-width: 400px;
+    }
+    .Main {
+        padding: 20px 0 20px 0 !important;
+        
+    }
+    .ImageSection img {
+        min-width: 350px !important;
+    }
+}
+
+.Titles, .Titles a {
+    font-size: 3rem;
+    color: #F4F4F9;
+}
+
+.Hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-family: "Assistant", sans-serif;
+}
+
+.Hero .Text {
+    margin-bottom: 20px;
+    padding: 60px;
+    text-align: left;
+
+    
+}
+
+.Hero .Titolo {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+.Hero p {
+    color: #666;
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-top: 0;
+    max-width: 600px;
+    
+}
+
+
+.Hero img {
+    width: 100%;
+    max-width: 1100px;
+    
+    
+}
+
+
+.Text {
+    display: flex; 
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #586F7C;
+    color: #F4F4F9;
+    border: 2px solid #586F7C;
+    border-radius: 5px;
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    max-width: 200px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0DC286;
+    color: #F4F4F9; 
+    border-color: #0DC286; 
+}
+
+.btn:active {
+    background-color: #34495E;
+    border-color: #34495E;
+    color: #F4F4F9;
+}
+
+
+#Logo {
+    filter: invert(100%) hue-rotate(180deg);
+    width: 128px;
+}
+
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #586F7C;
+    font-family: "Assistant", sans-serif;
+    font-weight: 500;
+}
+
+.NavBar-left {
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+}
+
+.NavBar-right {
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.NavBar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+
+}
+
+.NavItem {
+    text-decoration: none;
+    color: #F4F4F9;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.NavItem:hover {
+    color: #0DC286;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.NavBar ul {
+    list-style-type: none;
+    display: flex;
+    padding-top: 60px;
+}
+
+.Main {
+    padding: 20px 250px 20px 250px;
+}
+
+
+
+.Introduction, .Details, .Quiz {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #586F7C;
+    font-size: 3rem;
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+.Introduction p, .Details p, .Quiz p, .Main ul{
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+.ImageSection {
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+.ImageSection img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.quizimg{
+    display: flex;
+    justify-content: center;
+}
+
+.quizimg img {
+    height: 500px;
+}
+
+.Quiz .btn:hover {
+    background-color: #0DC286;
+    border-color: #0DC286;
+}
+
+.Quiz .btn:active {
+    background-color: #34495E;
+    border-color: #34495E;
+}
+
+
+.Footer {
+    background-color: #586F7C;
+    color: #F4F4F9;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+.Footer p {
+    margin: 0;
+}

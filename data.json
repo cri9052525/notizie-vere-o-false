@@ -105,7 +105,7 @@
         "link": "no"
     },
     {
-        "titolo": "anatartide, ricercatore russo accoltella il collaga: \"mi rivelava il finale dei gialli\"",
+        "titolo": "antartide, ricercatore russo accoltella il collaga: \"mi rivelava il finale dei gialli\"",
         "real": true,
         "link": "https://www.repubblica.it/le-storie/2018/11/01/news/antartide_ricercatore_russo_accoltella_il_collega_mi_rivelava_il_finale_dei_libri_gialli_-210565172/#:~:text=Ascolta-,Antartide%2C%20ricercatore%20russo%20accoltella%20il%20collega%3A%20%27%27Mi%20rivelava,il%20finale%20dei%20gialli%27%27&text=Per%20un%20pelo%20non%20c,collega%20Oleg%20Beloguzov%2C%2052%20anni.\n"
     },
@@ -148,5 +148,100 @@
         "titolo": "napoli, i medici litigano e il paziente muore soffocato dalla pizza",
         "real": true,
         "link": "https://www.ilmattino.it/napoli/cronaca/napoli_paziente_muore_soffocato_pizza-4502672.html"
+    },
+    {
+        "titolo":"Liberata dopo due settimane l’anziana intrappolata in un letto pieghevole comprato in tv",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Sanremo, torna Carlo Conti: “Mi farà da curriculum per La Nove”",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Trova solo bottiglie d’acqua con tappi che non si staccano, leghista muore di sete",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"<<Ho una grappa che è una bomba>> Scatta il panico all'aeroporto",
+        "real":true,
+        "link":"https://www.ilgiornale.it/news/cronache/ho-grappa-che-bomba-scatta-panico-allaeroporto-1310974.html"
+    },
+    {
+        "titolo":"A Praga celebrazioni per la Festa della Repubblica italiana",
+        "real":true,
+        "link":"https://www.ansa.it/sito/notizie/mondo/news_dagli_istituti_di_cultura/2024/06/04/a-praga-celebrazioni-per-la-festa-della-repubblica-italiana_4edc412e-2dee-4dc5-a380-e106430a1939.html"
+    },
+    {
+        "titolo":"Despacito bandita da radio e tv statali",
+        "real":true,
+        "link":"https://www.cdt.ch/societa/despacito-bandita-da-radio-e-tv-statali-172444"
+    },
+    {
+        "titolo":"Ramiola, taglia i cavi delle campane della chiesa: <<Suonano alle 6.30!>>",
+        "real":true,
+        "link":"https://www.parmatoday.it/cronaca/ramiola-chiesa-taglia-cavi-campane.html"
+    },
+    {
+        "titolo":"Coppia vende i tre figli per giocare con i videogames: <<Non credevamo di fare nulla di male>>",
+        "real":true,
+        "link":"https://notizie.delmondo.info/2011/08/18/coppia-vende-i-tre-figli-per-giocare-con-i-videogamesnon-credevamo-di-fare-nulla-di-male/"
+    },
+    {
+        "titolo":"Fuma marijuana e va dai Carabinieri per denunciare: <<E' di cattiva qualità>>",
+        "real":true,
+        "link":"https://www.modenatoday.it/cronaca/denuncia-marijuana-scarsa-qualita-carpi-10-luglio-2017.html"
+    },
+    {
+        "titolo":"<<Matrimoni falliscono nel 50% dei casi>>. Startup lancia le fedi nuziali biodegradabili",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Hollywood, il sequel di <<Mad Max: Fury Road>> sarà girato nelle periferie romane",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Facebook blocca per 60 giorni la pagina di Charlie Chaplin",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Meloni lancia “ius mortis”: cittadinanza solo a bambini stranieri con aspettativa di vita di 8 mesi",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Bergoglio replica alle critiche sulle sue dichiarazioni: <<Non avete ancora sentito quella sui negri>>",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Lo allunga da 3 mesi invece di ricomprarlo: studente inventa detersivo omeopatico",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Oceano Pacifico, Ingegneri ambientalisti hanno creato un'isola galleggiante utilizzando plastica riciclata recuperata dagli oceani.",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Scoperto un nuovo colore osservato prima, una combinazione di blu e magenta che crea una tonalità iridescente visibile sotto specifiche condizioni di luce.",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Londra - Il nuovo sport estremo: il salto con l'ombrello",
+        "real":false,
+        "link":"no"
+    },
+    {
+        "titolo":"Morti bianche, Putin manderà oppositori politici a lavorare nei cantieri italiani",
+        "real":false,
+        "link":"no"
     }
 ]

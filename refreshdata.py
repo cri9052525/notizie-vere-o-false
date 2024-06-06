@@ -1,3 +1,4 @@
+#codice per convertire il filetxt temporaneo in un file json utilizzabile
 import json
 file=open("data.txt", "r")
 linee=file.readlines()

@@ -110,19 +110,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         #logoLink {
             z-index: 99;
         }
-        h1{
+
+        h1 {
             margin-top: 10vh;
             background-color: white;
             font-size: 4vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
-        label{
+
+        label {
             background-color: white;
             font-size: 4vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
-        input{
-            margin-left:2vh;
+
+        input {
+            margin-left: 2vh;
             background-color: white;
             font-size: 4vh;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -131,17 +134,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: rgb(248, 98, 98);
             z-index: 1000;
         }
-        form{
+
+        form {
             z-index: 1000;
-            display: flex ;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
         }
-        .clutter{
+
+        .clutter {
             z-index: 1000;
             margin: 5vh;
-            display:flex;
+            display: flex;
+        }
+
+        @media (orientation:portrait) {
+            p {
+                margin-top: -3vh;
+                width: 96vw;
+            }
+
+            #contain {
+                padding: 2vw;
+                width: 96vw;
+            }
+
+            #logo {
+                height: 100vh;
+                width: 50vh;
+                margin-top: -30vh;
+                margin-bottom: -52vh;
+            }
+
+            #punteggio {
+                width: 90vw;
+            }
+
+            input {
+                height: 100%;
+                margin-left: 0;
+            }
+
+            .clutter {
+                width: 96vw;
+                display: flex;
+                flex-direction: column;
+            }
+
         }
     </style>
 </head>
@@ -154,10 +194,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Il tuo punteggio: <?php echo $score; ?></h1>
         <form method="POST">
             <div class="clutter">
-            <label for="nickname">Inserisci il tuo nickname:</label><br>
-            <input type="text" id="nickname" name="nickname" required><br>
+                <label for="nickname">Inserisci il tuo nickname:</label><br>
+                <input type="text" id="nickname" name="nickname" required><br>
+
             </div>
-            <button type="submit">Salva il punteggio</button>
+            <p><?php echo $_SESSION["ragemsg"] ?></p>
+            <button id="punteggio" type="submit">Salva il punteggio</button>
         </form>
     </div>
 </body>
